@@ -1,8 +1,9 @@
 
-module keyway(len, width, depth, shaftRadius, hand){
-echo(len-hand);
+module keyway(len, width, depth, shaftRadius, shaftLen, hand){
+
 	if(hand > 0){
- translate([-1*(width/2),shaftRadius-depth, 1 + (1-len)]){
+ translate([-1*(width/2),shaftRadius-depth, shaftLen-len]){
+
 	 		cube(size=[width,width,len]);
 	}
 	}else{
@@ -28,13 +29,13 @@ module spindle(spindleW, spindleR, bearingW, bearingR, stepW, stepR, rotationVec
 	translate([0,0,spindleW+bearingW]) {
 		//difference() {
 			cylinder(h=stepW, r=stepR, $fn=100);
-			keyway(1.75,0.5,0.25,stepR, 1);
+			keyway(1.75,0.5,0.25,stepR, stepW, 1);
 		//}
 	}
 	translate([0,0,-1*(bearingW+stepW)]){
 	 //difference() {
 	  cylinder(h=stepW, r=stepR, $fn=100);
-	  keyway(1.75,0.5,0.25,stepR, 0);
+	  keyway(1.75,0.5,0.25,stepR, stepW, 0);
 	// }
  }
 }
