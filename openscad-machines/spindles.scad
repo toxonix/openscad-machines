@@ -42,5 +42,15 @@ module spindle(spindleW, spindleR, bearingW, bearingR, stepW, stepR, rotationVec
 }
 
 //draw a pair of rolling spindles
-spindle(6,3,2,2,2,1,[90,0,0],[0,6.1,0]);
-spindle(6,3,2,2,2,1,[90,0,0],[0,0,0]);
+translate([5,0,4]){
+	spindle(6,3,2,2,2,1,[90,0,0],[0,6.1,0]);
+	spindle(6,3,2,2,2,1,[90,0,0],[0,0,0]);
+}
+
+cube([2.5,2,16]);
+translate([7.5,0,0]){
+cube([2.5,2,16]);
+}
+translate([0,0,16]){
+cube([2.5+7.5,2,2]);
+}
