@@ -29,17 +29,6 @@ module tslot(throat_w, throat_d, hs_w, hs_d, len){
 	
 }
 
-//creates a single-starting thread. the length of the thread is 
-//pitch*num_turns.
-module thread( dia   = 0.5,
-			 p = 12,
-			 angle = 60, 
-			 tl    = 10){
-}
-
-translate([0,20,0]){
-	thread(0.5,12,60,10);
-}
 //example
 //creates a block with slots. 
 
